@@ -115,7 +115,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
         <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
           <a
-            href="https://api.whatsapp.com/send/?phone=593959504842&text=%C2%A1Hola%21+Estoy+interesado+en+comprar+uno+de+sus+productos+de+muebles+a+medida.+%C2%BFPodr%C3%ADa+proporcionarme+m%C3%A1s+informaci%C3%B3n+sobre&type=phone_number&app_absent=0"
+            href="https://web.whatsapp.com/"
             target="_blank"
             className="bg-green-500 p-2 rounded-full flex justify-center items-center hover:bg-green-700 hover:scale-105"
           >
