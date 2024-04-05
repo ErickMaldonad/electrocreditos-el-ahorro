@@ -1,10 +1,10 @@
 "use client";
 
-import Heading from "@/app/components/Heading";
+import Heading from "@/app/components/home/Heading";
 import { useCallback, useEffect, useState } from "react";
 import Input from "@/app/components/inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Button from "@/app/components/Button";
+import Button from "@/app/components/button/Button";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
@@ -13,6 +13,8 @@ import { toast } from "react-hot-toast";
 import { SafeUser } from "@/types";
 import { on } from "events";
 import Image from "next/image";
+import { FaFacebook } from "react-icons/fa6";
+
 interface LoginFormProps {
   currentUser: SafeUser | null;
 }
@@ -90,18 +92,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit(onSubmit)} className="m-4">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col items-center">
           <div className="mb-0">
-          <Image
-                src="/logoA.png"
-                alt="logo"
-                width={180}
-                height={65}
-                className="mb-0 "
-                style={{ width: "180px", height: "55px" }}
-              />
+            <Image
+              src="/logoA.png"
+              alt="logo"
+              width={180}
+              height={65}
+              className="mb-0 "
+              style={{ width: "180px", height: "55px" }}
+            />
           </div>
           <h2 className="mt-5 text-center text-xl font-bold leading-4 tracking-tight text-gray-900">
             Iniciar sesión en su cuenta
@@ -222,6 +225,20 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
           </div>
         </div>
       )}
+      <div className="flex items-center pt-4 space-x-1">
+        <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+        <p className="px-3 text-sm text-gray-600">Iniciar sesión con </p>
+        <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+      </div>
+      <div className="flex justify-center space-x-4">
+        <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <FcGoogle size={30} />
+        </button>
+        <button aria-label="Log in with Facebook" className="p-3 rounded-sm">
+          <FaFacebook size={30} className="text-[#1877F2]" />
+        </button>
+      </div>
+
       <div className="pt-4 mb-8 p-2 flex flex-col items-center">
         <Button
           label={isLoading ? "Loading" : "Iniciar Sesión"}
@@ -238,7 +255,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
         </p>
       </div>
     </form>
+    </>
+    
   );
 };
 
 export default LoginForm;
+
+
