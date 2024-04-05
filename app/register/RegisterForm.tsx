@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Input from "../components/inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Button from "../components/Button";
+import Button from "../components/button/Button";
 import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -11,7 +11,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { SafeUser } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import userSchema from "@/app/models/userSchema";
+import userSchema from "@/app/api/models/userSchema";
 import Image from "next/image";
 
 interface LoginFormProps {
@@ -206,3 +206,4 @@ const RegisterForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 };
 
 export default RegisterForm;
+
