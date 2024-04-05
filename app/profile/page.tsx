@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import Container from "@/app/components/Container";
+import Container from "@/app/components/container/Container";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { AiOutlineUser, AiOutlineMail, AiOutlineCheckCircle } from "react-icons/ai";
+import ProtectedRoute from "@/app/components/ProtectedRoute";
 
 function ProfilePage() {
   const router = useRouter();
@@ -16,6 +17,7 @@ function ProfilePage() {
   };
 
   return (
+    <ProtectedRoute>
     <Container>
       <div className="pt-8 flex flex-col items-center">
         <h1 className="font-bold text-xl mb-8">Perfil de Usuario</h1>
@@ -29,10 +31,12 @@ function ProfilePage() {
 
               <p className="mb-4 flex items-center">
                 <AiOutlineUser className="mr-2" />
+                 {/* @ts-ignore */}
                 <strong className="mr-2">Nombre: </strong> {session.user?.firstname}
               </p>
               <p className="mb-4 flex items-center">
                 <AiOutlineUser className="mr-2" />
+                {/* @ts-ignore */}
                 <strong className="mr-2">Apellido: </strong> {session.user?.lastname}
               </p>
               <p className="mb-4 flex items-center">
@@ -57,6 +61,7 @@ function ProfilePage() {
         </div>
       </div>
     </Container>
+    </ProtectedRoute>
   );
 }
 
