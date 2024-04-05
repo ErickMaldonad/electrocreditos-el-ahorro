@@ -1,6 +1,5 @@
-import Container from "@/app/components/Container";
+import Container from "@/app/components/container/Container";
 import Link from "next/link";
-
 import Image from "next/image";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoMdMail, IoMdCall } from "react-icons/io";
@@ -12,41 +11,61 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div>
-      <div className="bg-[#D32B2B] text-white p-2">
-        <div className="mt-3 sm:mt-0 sm:order-2">
+      <div className="bg-[#D32B2B] text-white pt- flex flex-col sm:flex-row items-center justify-center">
+        <p className="ml-2 mr-4 text-sm">Aceptamos transferencias Bancarias</p>
+        <div className="flex items-center">
+          <Image
+            src="/cards.svg"
+            alt="image"
+            width={120}
+            height={80}
+            className="mx-auto"
+            style={{ width: "auto", height: "auto" }}
+            priority={false}
+          />
+        </div>
+        <div className="flex items-center ">
           <Image
             src="/tarjetas.png"
             alt="image"
-            width={420}
+            width={320}
             height={80}
-            className="mx-auto"
+            className="mx-auto pl-8"
           />
         </div>
       </div>
-      <footer className=" bg-[#282828]">
+
+      <footer className=" bg-[#282828] pt-4">
         <Container>
-          <div className="mx-auto max-w-screen-xl px-8 pb-1 pt-2 sm:px-6 lg:px-8 lg:pt-12">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className=" px-2 pb-2  lg:px-8 lg:pt-8 ">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-3  ">
               <div>
-                <Link href="/">
-                  <div className="flex justify-center sm:justify-start ">
+                <div className="flex justify-center sm:justify-start pt-2 ">
+                  <Link href="/">
                     <Image
-                      src="/logoA.png"
+                      src="/electrocredits-logoA.png"
                       alt="logo"
-                      width={180}
+                      width={200}
                       height={65}
                       className="mt-0 "
-                      style={{ filter: "invert(100%)" }}
+                      style={{
+                        filter: "invert(50%)",
+                        width: "180",
+                        height: "65",
+                      }}
                     />
-                  </div>
-                </Link>
+                  </Link>
+                </div>
 
-                <p className="mt-3 max-w-md text-center sm:text-left leading-relaxed text-white text-sm mx-auto hidden sm:block">
+                <p
+                  className="mt-2 max-w-md  sm:text-left leading-relaxed text-white text-sm mx-auto hidden sm:block"
+                  style={{ textAlign: "justify" }}
+                >
                   Electrocréditos en una empresa dedicada a la comercialización
-                  de electrocréditos y productos del hogar
+                  de electrodomésticos y productos del hogar
                 </p>
 
-                <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+                <ul className="mt-3 flex justify-center gap-4 sm:justify-start md:gap-4 ">
                   <li>
                     <div className="flex justify-center">
                       <Link
@@ -89,35 +108,23 @@ const Footer = () => {
                     </div>
                   </li>
 
-                  <li>
-                    <div className="flex items-center justify-center">
-                      <Link
-                        href="https://www.youtube.com/"
-                        rel="noreferrer"
-                        target="_blank"
-                        className="text-white"
-                      >
-                        <span className="sr-only">Youtube</span>
-                        <IoLogoYoutube size={25} />
-                      </Link>
-                    </div>
-                  </li>
+                  
                 </ul>
               </div>
 
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
+              <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
                 <div className="text-center sm:text-left">
-                  <p className="text-lg font-medium text-gray-900 dark:text-white">
+                  <p className="text-lg font-medium text-white">
                     Contacto
                   </p>
 
-                  <ul className="mt-8 space-y-4 text-sm">
+                  <ul className="mt-4 space-y-3 text-sm">
                     <li className="flex items-center justify-center sm:justify-start gap-1.5">
                       <Link className="flex items-center text-white" href="#">
                         <IoMdMail size={20} className="mr-2" />
-                        <span className="text-gray-700 dark:text-gray-300">
+                        <span className="text-white pr-8 text-xs">
                           {" "}
-                          electrocreditos@gmail.com
+                          electrocreditoselahorro2024@gmail.com
                         </span>
                       </Link>
                     </li>
@@ -125,16 +132,16 @@ const Footer = () => {
                     <li className="flex items-center justify-center sm:justify-start gap-1.5">
                       <Link className="flex items-center text-white" href="#">
                         <IoMdCall size={20} className="mr-2" />
-                        <span className="text-gray-700 dark:text-gray-300 ">
+                        <span className="text-white ">
                           {" "}
-                          0123456789
+                          +593 986228963
                         </span>
                       </Link>
                     </li>
 
                     <li className="flex text-white  items-center justify-center sm:justify-start gap-1.5">
                       <IoLocationSharp size={20} className="mr-0" />
-                      <address className="text-gray-700 dark:text-gray-300">
+                      <address className="text-white">
                         {" "}
                         Manabí, El Carmen
                       </address>
@@ -143,15 +150,15 @@ const Footer = () => {
                 </div>
 
                 <div className="text-center sm:text-left">
-                  <p className="text-lg font-medium text-gray-900 dark:text-white">
+                  <p className="text-lg font-medium text-white">
                     Nuestros Productos
                   </p>
 
-                  <ul className="mt-8 space-y-4 text-sm">
+                  <ul className="mt-4 space-y-3 text-sm">
                     <li>
                       <Link
                         href="/electrodomesticos"
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                       >
                         Electrodomésticos
                       </Link>
@@ -160,7 +167,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/lavanderia"
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                       >
                         Lavanderia
                       </Link>
@@ -169,7 +176,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/linea-de-hogar"
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                       >
                         Linea de hogar
                       </Link>
@@ -178,7 +185,7 @@ const Footer = () => {
                     <li>
                       <Link
                         href="/tecnologia"
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                       >
                         Tecnologia
                       </Link>
@@ -187,14 +194,14 @@ const Footer = () => {
                 </div>
 
                 <div className="text-center sm:text-left">
-                  <p className="text-lg font-medium text-gray-900 dark:text-white hidden sm:block">
+                  <p className="text-lg font-medium text-white hidden sm:block">
                     Enlaces Útiles
                   </p>
 
-                  <ul className="mt-8 space-y-4 text-sm">
+                  <ul className="mt-4 space-y-3 text-sm">
                     <li className="hidden sm:block">
                       <Link
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                         href="/faqs"
                       >
                         FAQs
@@ -203,7 +210,7 @@ const Footer = () => {
 
                     <li className="hidden sm:block">
                       <Link
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                         href="/support"
                       >
                         Soporte
@@ -213,7 +220,7 @@ const Footer = () => {
                     <li className="hidden sm:block">
                       <Link
                         href="/terms-conditions"
-                        className="text-gray-700 transition group-hover:text-slate-100/75 dark:text-white dark:hover:text-white/75"
+                        className="transition text-white dark:hover:text-white/75"
                       >
                         Términos y Condiciones
                       </Link>
@@ -223,10 +230,10 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-full h-auto mt-6 border-t border-gray-100 pt-3 dark:border-white flex flex-col sm:flex-row items-center justify-between">
+            <div className="w-full h-auto mt-2 border-t border-gray-100 pt-2 dark:border-white flex flex-col sm:flex-row items-center justify-between">
               <div className="flex justify-center w-full">
                 <p className="text-sm text-white justify-center items-center text-center sm:text-left">
-                  Todos los derechos reservados &copy; {currentYear} |
+                  Todos los derechos reservados &copy; {currentYear}.
                   Electrocréditos el Ahorro
                 </p>
               </div>
