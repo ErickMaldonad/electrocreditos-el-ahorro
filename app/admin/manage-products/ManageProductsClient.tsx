@@ -3,8 +3,8 @@
 import { Product } from "@prisma/client";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { formatPrice } from "@/utils/formatPrice";
-import Heading from "@/app/components/Heading";
-import Status from "@/app/components/Status";
+import Heading from "@/app/components/home/Heading";
+import Status from "@/app/components/status/Status";
 import {
   MdCached,
   MdClose,
@@ -12,7 +12,7 @@ import {
   MdDone,
   MdRemoveRedEye,
 } from "react-icons/md";
-import ActionBtn from "@/app/components/ActionBtn";
+import ActionBtn from "@/app/components/button/ActionBtn";
 import { useCallback } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";

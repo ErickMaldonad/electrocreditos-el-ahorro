@@ -1,9 +1,9 @@
 "use client";
 
-import Button from "@/app/components/Button";
-import Heading from "@/app/components/Heading";
-import CategoryInput  from "@/app/components/inputs/CategoryInput";
-import SubCategoryInput from "@/app/components/inputs/SubCategoryInput"
+import Button from "@/app/components/button/Button";
+import Heading from "@/app/components/home/Heading";
+import CategoryInput from "@/app/components/inputs/CategoryInput";
+import SubCategoryInput from "@/app/components/inputs/SubCategoryInput";
 import CustomCheckBox from "@/app/components/inputs/CustomCheckBox";
 import Input from "@/app/components/inputs/Input";
 import SelectColor from "@/app/components/inputs/SelectColor";
@@ -23,6 +23,7 @@ import firebaseApp from "@/libs/firebase";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
+
 export type ImageType = {
   color: string;
   colorCode: string;
@@ -33,8 +34,6 @@ export type UploadedImageType = {
   colorCode: string;
   image: string;
 };
-
-
 
 const AddProductForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -56,12 +55,12 @@ const AddProductForm = () => {
       name: "",
       description: "",
       characteristics: "",
-      code:"",
+      code: "",
       measures: "",
       color: "",
       brand: "",
       category: "",
-      subcategory:"",
+      subcategory: "",
       inStock: false,
       images: [],
       price: "",
@@ -110,8 +109,6 @@ const AddProductForm = () => {
       setIsLoading(false);
       return toast.error("No selected image!");
     }
-
-  
 
     const handleImageUploads = async () => {
       toast("Creando producto, espere un momento");
@@ -190,7 +187,7 @@ const AddProductForm = () => {
       });
   };
   const category = watch("category");
-  const subcategory = watch("subcategory"); 
+  const subcategory = watch("subcategory");
 
   const addImageToState = useCallback((value: ImageType) => {
     setImages((prev) => {
@@ -216,83 +213,120 @@ const AddProductForm = () => {
   return (
     <>
       <Heading title="Añadir Productos" center />
-      <div className="w-full grid grid-cols-2 gap-2 pr-8 pl-8">
-        <Input
-          id="name"
-          label="Nombre"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
+      <div className=" flex justify-center ">
+        <div className="w-[720px]">
           <Input
-          id="code"
-          label="Código"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          id="brand"
-          label="Marca"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          id="color"
-          label="Color"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-        <Input
-          id="price"
-          label="Precio"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          type="number"
-          required
-        />
-         <Input
-          id="measures"
-          label="Dimensión"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-      </div>
-      <div className="w-full grid grid-cols-2 gap-2  pr-8 pl-8">
-       
+            id="name"
+            label="Nombre"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.name?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.name.message as string}
+            </p>
+          )}
+          <Input
+            id="code"
+            label="Código"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.code?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.code.message as string}
+            </p>
+          )}
+          <Input
+            id="brand"
+            label="Marca"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.brand?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.brand.message as string}
+            </p>
+          )}
+          <Input
+            id="color"
+            label="Color"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.color?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.color.message as string}
+            </p>
+          )}
+          <Input
+            id="price"
+            label="Precio"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            type="number"
+            required
+          />
+          {errors.price?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.price.message as string}
+            </p>
+          )}
+          <Input
+            id="measures"
+            label="Dimensión"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.measures?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.measures.message as string}
+            </p>
+          )}
 
-        <TextArea
-          id="characteristics"
-          label="Características"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-        />
-        <TextArea
-          id="description"
-          label="Descripción"
-          disabled={isLoading}
-          register={register}
-          errors={errors}
-          required
-          
-        />
-
-        <CustomCheckBox
-          id="inStock"
-          register={register}
-          label="Este producto está en stock"
-        />
+          <TextArea
+            id="characteristics"
+            label="Características"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.characteristics?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.characteristics.message as string}
+            </p>
+          )}
+          <TextArea
+            id="description"
+            label="Descripción"
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+          />
+          {errors.description?.message && (
+            <p className="text-red-500 text-sm">
+              {errors.description.message as string}
+            </p>
+          )}
+          <CustomCheckBox
+            id="inStock"
+            register={register}
+            label="Este producto está en stock"
+          />
+        </div>
       </div>
 
       <div className="w-full font-medium mt-3 pr-8 pl-8">
@@ -325,13 +359,15 @@ const AddProductForm = () => {
             }
             return (
               <div key={item.label} className="col-span text-xs">
-              <SubCategoryInput
-                onClick={(subcategory) => setCustomValue("subcategory", subcategory)}
-                selected={subcategory === item.label}
-                label={item.label}
-                icon={item.icon}
-              />
-            </div>
+                <SubCategoryInput
+                  onClick={(subcategory) =>
+                    setCustomValue("subcategory", subcategory)
+                  }
+                  selected={subcategory === item.label}
+                  label={item.label}
+                  icon={item.icon}
+                />
+              </div>
             );
           })}
         </div>
@@ -362,12 +398,11 @@ const AddProductForm = () => {
         </div>
       </div>
       <div className="mt-4 flex flex-col items-center">
-      <Button
-        label={isLoading ? "Cargando..." : "Añadir Producto"}
-        onClick={handleSubmit(onSubmit)}
-      />
+        <Button
+          label={isLoading ? "Cargando..." : "Añadir Producto"}
+          onClick={handleSubmit(onSubmit)}
+        />
       </div>
-     
     </>
   );
 };

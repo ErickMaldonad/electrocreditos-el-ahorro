@@ -1,9 +1,8 @@
 
 
-import { getCurrentUser } from "@/actions/getCurrentUser";
-import Container from "@/app/components/Container";
-import FormWrap from "@/app/components/FormWrap";
-import NullData from "@/app/components/NullData";
+import { getCurrentUser } from "@/app/api/actions/getCurrentUser";
+import Container from "@/app/components/container/Container";
+import NullData from "@/app/components/status/NullData";
 import AddProductForm from "./AddProductForm";
 
 const AddProducts =async () => {
