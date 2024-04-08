@@ -1,30 +1,29 @@
 import React from 'react';
 import Container from '../components/container/Container';
 import Image from 'next/image';
-import Link from 'next/link';
 
 type Props = {}
 
-function ConditionPage({}: Props) {
+function TermsConditionsPage({}: Props) {
   return (
     <Container>
       <div className="mt-3 sm:mt-0 sm:order-2 ">
         <Image
-          src="/termsyconditions.png"
+          src="/terms.png"
           alt="Terminos y condiciones"
-          width={900}
-          height={60}
+          width={600}
+          height={50}
           className="mx-auto "
         />
       </div>
       <h1 className='text-left justify-center text-4xl font-serif text-slate-800 mt-9 mb-10 '>
         TÉRMINOS Y CONDICIONES
       </h1>
-      <div className="h-full  bg-gray-200 flex flex-col justify-center items-center relative hover:shadow-xl transition duration-300 my-10">
+      <div className="h-full  bg-gray-100 flex flex-col justify-center items-center relative hover:shadow-xl transition duration-300 my-10">
         <p className="mt-4 mb-4 mx-8 text-justify font-serif text-2xl">
         ¡Bienvenido al Portal de ELECTROCRÉTIDOS EL AHORRO!
         </p>
-        <p className='mt-4 mb-4 mx-8 text-justify font-medium'>
+        <p className='mt-4 mb-4 mx-8 text-justify font-medium '>
             
             Los presentes términos y condiciones, en adelante referidos como "Términos y Condiciones", establecen los derechos y responsabilidades que rigen el acceso y uso de los servicios proporcionados por Electrocréditos el Ahorro en el Ecuador. 
             Se recomienda encarecidamente la lectura detenida y completa de los mismos por parte de los usuarios de este portal, con el fin de comprender plenamente sus alcances y condiciones.
@@ -120,7 +119,7 @@ function ConditionPage({}: Props) {
           <br/>
 
           Cada artículo adquirido en Electrocréditos el Ahorro viene con un tiempo de garantía de fábrica por defecto, durante el cual el cliente tiene el derecho de reclamar en caso de necesidad, contactándonos a través de nuestros canales de 
-          comunicación: <a href="mailto:electrocreditoselahorro2024@gmail.com" style={{  color: 'blue', textDecoration: 'underline'}}> electrocreditoselahorro2024@gmail.com</a> y vía Whatsapp al (+593) 986228963. 
+          comunicación: electrocreditoselahorro2024@gmail.com y vía Whatsapp al 986228963. 
           El proceso de reclamo seguirá los protocolos establecidos por la compañía, donde el producto será evaluado por un taller autorizado para determinar su estado y validar la garantía de fábrica. Posteriormente, el trámite será aprobado por los encargados. 
           Es importante revisar la cartilla de garantía incluida en el interior de cada producto.
           
@@ -176,25 +175,28 @@ function ConditionPage({}: Props) {
           <br/>
           Redes Sociales
               <br/>
-              
               - Facebook
               <br/>
               - Instagram
+              <br/>
+              - YouTube
           
           <br/>
           <br/>
           Llamada telefónica
 
               <br/>
-              (+593) 986228963
-                       
+              0123456789
+              <br/>
+              06-xx-x
+          
           <br/>
           <br/>
           Correo electrónico
 
               <br/>
-              <a href="mailto:electrocreditoselahorro2024@gmail.com" style={{  color: 'blue', textDecoration: 'underline'}}> electrocreditoselahorro2024@gmail.com</a> 
-          
+              electrocreditoselahorro2024@gmail.com 
+              
           <br/>
           <br/>
           Chat
@@ -207,4 +209,5 @@ function ConditionPage({}: Props) {
   );
 }
 
-export default ConditionPage;
+export default TermsConditionsPage;
+
