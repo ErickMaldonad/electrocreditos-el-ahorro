@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../components/container/Container';
 import Image from 'next/image';
+import Container from '../components/container/Container';
 
 type Props = {}
 
@@ -209,5 +209,5 @@ function TermsConditionsPage({}: Props) {
   );
 }
 
-export default TermsConditionsPage;
+export default TermsConditionsPage
 
