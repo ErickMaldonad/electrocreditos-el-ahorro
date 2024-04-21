@@ -4,12 +4,12 @@ import { useCallback, useEffect, useState } from "react";
 import { useCart } from "@/hooks/useCart";
 import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
-import Button from "@/app/components/Button";
+import Button from "@/app/components/button/Button";
 import ProductImage from "@/app/components/products/ProductImage";
 import { MdCheckCircle } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import Container from "@/app/components/Container";
+import Container from "@/app/components/container/Container";
 interface ProductDetailsProps {
   product: any;
 }
